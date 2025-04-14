@@ -1,0 +1,422 @@
+Oops : 
+----
+Features :  Class,Object,Encapsulation,Inheritance,Polymorphism,Abstraction
+--------
+Advantages of Oops : Modularity(Divides code into small parts) 
+------------------   
+			Security (Encapsulation and Abstraction)
+		
+		       Reusability (Inheritance)
+		    
+			Flexibility ( Polymorphism )
+
+==================================================================================================================================================================
+
+Class : Creation of objects , collection of methods ,variables , constructor , objects ,blocks etc..
+------  
+
+Object : instance of class , collection of non static variables and variables , holds only a non static members, Every object has its own state and behaviour(variables & methods).
+-------
+
+Encapsulation : Accessing the private variables from one class to another class with the help of public methods (i.e . Getters and Setters). 
+--------------
+
+==================================================================================================================================================================
+
+Inheritance : Aquring Parent class properties from child class , is also Known as " IS A RELATIONSHIP ".
+------------
+Inheritance is used for reusability of code.To inherit data into child we have to use " EXTENDS " keyword .
+
+"" OBJECT " is the default parent for every class.
+
+Terminology of Inheritance : 
+----------------------------
+
+	Parent		Child
+
+	Super		Sub
+
+	Base		Derived
+
+Types : 
+-------
+
+>> Single Level Inheritance - Parent having single child.
+
+>> Multi Level Inheritance - GrandParent having Parent Having Child .
+
+>> Hierarical Inheritance - A Parent having differet childs.
+
+>> Hybrid Inheritance - 
+
+>> Multiple Inheritance - A child having multiple parents.
+
+Note : 
+
+* We cannot inherit private methods from one class to another class .
+
+* We cannot inherit parent class constructor to Child class.
+
+* We can invoke the parent class constructor from CHILD class Constructor by using " SUPER() ".
+
+* Parent class cannot access the properties of child class with its own reference.
+
+* " Parent Reference = new child(); " 
+
+	Can Access child class object with parent class reference - yes 
+
+	Can i access parent Class properties - yes
+
+	Can i access child class properties - No
+
+* " Child refar = new Parent(); " - No ( Compile time Error ) . 
+
+* " Child refar = ( child ) new Parent(); " 
+
+	can i downcast parent object to child class reference - Yes ( But it resolves the compilation error at the runtime we get " Java.lang.ClassCastException ".
+
+* " Parent parent = new child(); " 	   -------
+  " Child refar = ( child ) parentrefar ;  ------- VALID CODES
+
+* " Child refar = new Child(); " 
+	Can i access child class properties - Yes .
+
+	Can i access Parent class Properties - Yes . 
+
+* " Parent refar = new Parent(); " 
+
+	Can i access Parent class Properties - Yes . 
+
+	Can i access child class properties - No .
+
+===============================================================================================================================================================================
+
+Polymorphism: 	
+------------- 
+		Poly     - Many ; 
+
+	      	morphism - Forms ;
+
+One object having many forms.
+
+These are two types : 
+
+Compiletime polymorphism || Method Overloading || Early binding  || Static binding.
+
+Runtime polymorphism  ||  Method Overriding ||  Late binding  || dynamic binding.
+
+Method Overloading : The process of having multiple methos in same class or in a parent class with the same method name and different parameters.
+-------------------
+
+We can change the return type of a method in method Overloading.
+
+Always parameters should be different or else it will throws a Compiletime Error.
+
+
+
+	|=======================================================|
+	|								  
+	|	Compiler Priority Order ( RULES ) :  		  
+	|	__________________________________		  
+	|								  
+	|		1. Nearest Datatype 			         
+	|								  
+	|		2. Implicit Typecasting ( Widening )	  
+	|								  
+	|		3. Wrapper Classes				  
+	|							 	  
+	|		4. Varargs				  	  
+	|							  	  
+	|=======================================================|
+
+
+
+	Can i overload FINAl methods - Yes 
+
+	Can i overload main method - Yes obviously
+
+	Can i overload static methods. -  Yes 
+
+	Can i overload Constructor - YES 							
+
+
+
+Method Overriding : Inheritance is Mandatory. 
+-------------------
+
+Method Overrinding is the process of subclass defining its own functionality but getting the data from Super class.
+
+To achieve method overriding in java we have to make relation between two or more classes or interfaces.
+
+
+
+
+	|=========================================================================================================================|
+	|																	       
+	|	Rules to Achieve Method Overriding:												
+	|	-----------------------------------												
+	|																		
+	| 	# Parent class method signature( Method name and parameters ) & Child class Method Signature should be same.		
+	|																		
+	|	# We cannot change return type of a method when it is declaring in a child class , but after 1.5 we can 		
+	|	  change the return type only for co-Varient return Type 									
+	|																		
+	|=========================================================================================================================|
+
+
+
+ Concept of Method Overriding : 
+-------------------------------
+
+* At the time of compilation. First compiler will check wheather the method is present in the parent class or not.
+
+* If method is not present compiler will throw an Compiletime Error.
+
+* If method is present now the responsibility is on Interpreter . Interpreter checks which object i am going to create and execute same class method,
+
+	if method is present , if not parent class is going to execute parent class method . This is why method overriding is known as Runtime Polymorphism.
+
+* We cannot override private methods from parent class.
+
+* We cannot override Static methods with non-static methods. ( Vice versa ).
+
+* we cannot Override static methods with static methods because it belongs to class , it is known as method hiding.
+
+* We Cannot Override Constructor & Final Methods.
+
+
+	|===================================================================|
+	|										
+	|										
+	|	Access Modifiers while overriding ( RULES ) :  			
+	|	_____________________________________________			
+	|										
+	|	Public >> Protected >> Default >> Private			
+	|										
+	|	Public 			Public					
+	|										
+	|	Protected		Protected , Public				
+	|										
+	|	Default 		Default , Protected , Public		
+	|										
+	|	Private 		cannot inherit or override			
+	|										
+	|										
+	|===================================================================|
+
+
+>> We cannot Override Main method because it is a static method 
+
+>> Can i override final methods in java - NO.
+
+Method Hiding :  Method hiding occurs when static method in a subclass has the same method signature as a static method in its super class. 
+--------------
+
+
+=====================================================================================================================================================
+
+Abstraction : Overrinding is Mandatory.
+-------------
+
+Pre- Requirements : >> Encapsulation. >> Inheritance >> Polymorphism
+-------------------
+
+Abstract is the process of hiding implementation and show neccessary details.
+
+Abstraction defines how object works but not implementation.
+
+In java we can acheive abstraction in 2 ways : >> Abstract Class & Abstrct Methods.    >> Interfaces ( 100 % Abstrction achieve ).
+
+Abstract Class : The class which is defined with abstract keyword is known as abstract class. 
+----------------
+		   	# The abstract class is blueprint of another class.
+
+				# We cannot create objects for abstract classes becoz they are not 100% class , it is just a blueprint of another class.
+	
+		+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+		SYNTAX : 
+		--------
+			
+			AccessModifier abstract class ClassName { }
+
+			eg :- public abstract class Demo { } 
+
+
+		+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+    ==========================================================================================================|
+    |
+    |	Rules to Declare Abstract Class : 
+    |	---------------------------------
+    |
+    |	The important rules that we need to follow while using an abstract class in Java are as follows:
+    |
+    |	# The keyword "abstract" is mandatory while declaring an abstract class in Java.
+    |
+    |	# Abstract classes cannot be instantiated directly.
+    |	
+    |	# An abstract class must have at least one abstract method.
+    |	
+    |	# An abstract class includes final methods.
+    |	
+    |	# An abstract class may also include non-abstract methods.
+    |	
+    |	# An abstract class can consist of constructors and static methods.
+    |
+    ==========================================================================================================|
+	
+
+	# We can write any number of abstract methods in abstract class , but always implementation should be in Child class.
+
+	# We have to override abstract methods in child class or else we will get an COMPILETIME ERROR . To resolve this COMPILETIME ERROR we have to override all
+
+ 		methods present in  parent class or declare your child as ABSTRACT.
+
+	# We can write any method in abstract classes if we want to invoke instance methods you have to access through child class reference.
+
+		Is it mandatory to write abstract method in abstract method - NO
+		
+		Can i declare ( STATIC & PRIVATE & FINAL ) abstract methods - NO ( CE )
+
+		Can i declare PROTECTED abstract method - YES 
+
+		Is it mandatory to Override the abstract methods in child class - YES
+
+	> > > > Which AccessModifiers are used in Abstract class - Default , Public
+
+Abstract Methods :  
+------------------
+	
+	# The method which are declared with abstract keyword is known as Abstract Method.
+
+	# The Methods are used when there is a common action and different implementation.
+
+	# We can write abstract methods in Abstract methods and Interfaces only.
+
+	# There will be no method body for Abstract class.
+ 
+	# Always end abstract method with semocolumn ( ; ).
+	
+	SYNTAX : 
+	--------
+	
+		AccessModifier abstrct retruntype methodName();
+
+		AccessModifier abstrct retruntype methodName( Parameters...... );
+
+	# The implementation of abstract methods are done in child class only.
+
+	> > > > Which AccessModifiers are used in Abstract Methods - Default , Protected , Public . 
+
+
+
+=============================================================================================================================================
+
+	" FINALLY THE RULE CHANGER WAS ENTERED "
+	-----------------------------------------
+
+	INTERFACE : 	( UPTO 1.7 - Acheive 100% Abstraction ) 
+	-----------
+
+	# Interface is used to add set of rules ( or ) Contract to a class how it should work or behave.
+
+	# To acheive 100% abstraction upto 1.7 we can use interfaces in java because it only allows abstract methods & public static final variables. 
+
+	# # # In interface we cannot write Concrete methods , private methods & static methods upto 1.7.
+
+	# If we declare any abstract methods or variable it is always " PUBLIC " accessibility.
+
+	# There is no " Constructor " and " instance variables "  are available in inetrface
+
+	# We can acheive multiple inheritance using interfaces because of no Constructor.
+
+	# To make relation between class and interface use " Implements ".
+
+	# To make relation between interfaces and interfaces use " Extends ".
+
+
+	SYNTAX : 
+	--------
+		AccessModifier interface interfaceName{ 
+		
+			// abstract Methods , Final Variables ( 1.7 )
+
+			// Static , Default ( 1.8 ) ; Private ( 1.9 ) 
+
+		}
+
+	By default the " ABSTRACT " Method is in >>>>> PUBLIC ABSTRACT( not Mandatory automatically it takes public abstract ) VOID METHODNAME();
+
+	
+	AFTER 1.7 : 
+	-----------
+	
+	# We can write static and default methods in interface.
+
+	# By this we can give implementation to a method.  	
+
+	# So after 1.8 interface is not 100% abstraction. ( FOR 100% ABSTRACTION DONT USE STATIC )
+
+	CLASS STATIC METHOD : Static methods inherited to subclass , we access using CLASSNAME or REFERENCE.
+	---------------------
+
+	INTERFACE STATIC METHOD : In case of interface static methods , these methods are not inherited to subclass because interface doesnot give any implementation  
+	------------------------	
+						to subclass.
+
+	>>>>	 CANNOT INHERIT STATIC METHODS FROM INTERFACE 	<<<<
+
+	|===============================================================================|
+	|										|
+	|	DYNAMIC METHOD DISPATCH ( Method overriding ) :-  Decide in RUNTIME	| 
+	|										|
+	|===============================================================================|
+
+
+	DEFAULT METHODS : To adding new feature to the WANTED CLASS.  
+	----------------
+	
+		SYNTAX :  
+		-------
+			default void methodName(){ }
+	
+	>>>> 	 For overriding in subclass we have to use accessmodifier for " PUBLIC " in the place of " DEFAULT ".	<<<<
+
+		SYNTAX in Subclass to override : 
+		-------------------------------
+	
+			public void methName() { } 
+
+
+		# There are two ways to invoke default method in interface : 
+			
+			* Overring the Default method 
+
+			* Invoking with " InterfaceName.Super.MethodName(); "
+
+		# When we have two parents having same actions to inherit from the child class we have to Override the methods that are in interface parent classes.
+		
+	==============================================================================================
+
+	For Static methods In multiple inheritance :-
+	-------------------------------------------
+		
+		To access Interface class Static Method from Child class we have to the below syntax.
+	
+		Syntax :       interface ClassName. methodName();
+
+	    	
+
+			Can i write main method in interface - YES ( from 1.8 )
+
+			
+
+	
+	
+	
+		
+	
+
+
