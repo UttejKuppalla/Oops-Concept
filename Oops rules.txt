@@ -105,7 +105,7 @@ Compiletime polymorphism || Method Overloading || Early binding  || Static bindi
 
 Runtime polymorphism  ||  Method Overriding ||  Late binding  || dynamic binding.
 
-Method Overloading : The process of having multiple methos in same class or in a parent class with the same method name and different parameters.
+Method Overloading : The process of having multiple methods in same class or in a parent class with the same method name and different parameters.
 -------------------
 
 We can change the return type of a method in method Overloading.
