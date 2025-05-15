@@ -293,7 +293,7 @@ Abstract Methods :
 
 	# The Methods are used when there is a common action and different implementation.
 
-	# We can write abstract methods in Abstract methods and Interfaces only.
+	# We can write abstract methods in Abstract Class and Interfaces only.
 
 	# There will be no method body for Abstract class.
  
